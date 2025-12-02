@@ -1,0 +1,31 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: department-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/hcms_department?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+logging:
+  level:
+    com.hcms.department: DEBUG
+

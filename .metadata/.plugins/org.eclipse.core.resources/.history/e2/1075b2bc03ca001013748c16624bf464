@@ -1,0 +1,41 @@
+#server:
+#  port: 8761
+#
+#spring:
+#  application:
+#    name: eureka-server
+#
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    register-with-eureka: false
+#    fetch-registry: false
+#    service-url:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#
+
+# ===============================
+# Server Configuration
+# ===============================
+server.port=8761
+
+# ===============================
+# Application Info
+# ===============================
+spring.application.name=eureka-server
+
+# ===============================
+# Eureka Server Configuration
+# ===============================
+# Prevent Eureka Server from registering itself
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false
+
+# Optional: hostname (use localhost for local dev)
+eureka.instance.hostname=localhost
+
+# ===============================
+# Actuator (Optional - for health/info endpoints)
+# ===============================
+management.endpoints.web.exposure.include=health,info
